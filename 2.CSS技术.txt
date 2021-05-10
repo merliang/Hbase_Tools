@@ -1,0 +1,135 @@
+1.CSS是层叠样式表单，是用于增强控制网页样式并允许将样式信息与网页内容分离的一种标记性语言
+
+2.HTML标签和CSS标签的并用
+	2.1.在head标签中，使用style标签来定义各种自己需要的css样式
+		格式如下：
+				XXX{
+					Key ：value value；
+				}
+		例子：<html>
+				<head>
+					<meta charset="utf-8">
+					<title>Merliang</title>
+					<style type="text/css">
+						div{
+							border: 1px solid aqua;
+							}
+					</style>
+				</head>
+				<body>
+					<div>标签一</div>
+					<div>标签二</div>
+					</body>
+			  </html>
+	
+			缺点:只能在同一页面内复用代码，不能在多个页面内复用代码；维护起来不方便
+			
+		
+	2.2.把css样式写成一个单独的css文件，再通过link标签引入即可
+		css文件样例:div {
+						border: 1px solid aqua;
+						}
+
+					span {
+							border: 5px solid red;
+						}
+				#直接写入代码即可
+				
+		heml文件：在head标签中输入link标签，引入css文件
+					<link rel="stylesheet" type="text/css" href="./css/type_one.css" />
+					
+		
+3.CSS选择器(写在html——head中)
+	3.1.标签名选择器
+		格式：
+			 标签名{
+					属性：值；
+				}
+		
+		作用：可以决定哪些标签被动的使用这些样式
+
+	3.2.id选择器
+		格式：
+			#id属性值{
+					属性：值；
+				}
+				
+		作用：可以让我们通过id属性选择性的使用这些样式
+		提示：有些标签有id选项，可以使用id选择器
+		
+	3.3.class类型选择器
+		格式：
+			.class属性值{
+						属性：值；
+						}
+						
+		作用：可以通过class属性有效的选择性的去使用这个样式
+	
+	3.4.组合选择器
+		格式：
+			选择器1，选择器2，选择器n{
+									属性：值；
+									}
+		
+		作用：可以让多个选择器共用一个代码
+		
+		例子：
+			<head>
+				<meta charset="utf-8">
+				<title>Merliang</title>
+				<style type="text/css">
+					.class01,#id01 {
+								color: red;
+								font-size: 20px;
+								border:1px black solid;
+								}
+							</style>
+						</head>
+						<body>
+							<div class="class01">标签一</div>
+							<div id="id01">标签二</div>
+							<span class="class01" id="id01">标签三</span>
+						</body>
+	 
+4.CSS常用样式
+	4.1.颜色: color
+	
+	4.2.宽度：width
+	
+	4.3.高度：height
+	
+	4.4.背景颜色：background-color
+	
+	4.5.字体样式：color
+				  font-size   字体大小
+				  
+	4.6.边框：border
+	
+	4.7.DIV居中：margin-left:auto;
+				 margin-right:auto;
+				 
+	4.8.文字位置：text-align
+	
+	4.10.超链接去下划线：text-decoration:none
+			a{
+				text-decoration:none;
+			 }
+		#写在html——head中
+			 
+	4.11.表格细线：
+			table{
+					border:1px solid black；/*设置边框*/
+					border-collapse: collapse;/*将边框合并*/
+				}
+			td,th{
+					
+					border:1px solid black；/*设置边框*/
+				}
+				
+	4.12.列表去除修饰
+			ul{
+				list-style:none;
+			}
+		#在body里单独写一行就可以了
+		
+	4.13

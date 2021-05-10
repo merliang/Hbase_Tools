@@ -1,0 +1,179 @@
+1.标签格式：
+	<标签名>封装的数据</标签名>
+	
+2.标签大小写不敏感
+
+3.标签有自己的属性
+	3.1.基本属性:bgcolor = "red"   可以修改简单的样式效果
+	3.2.事件属性：onclick = "alert('你好！')"	可以直接设置事件响应后的代码
+	
+4.标签还分为单标签和双标签
+	4.1.单标签格式：<标签名/>
+	br 换行	
+	4.2.双标签：<标签名>封装的数据</标签名>
+	
+5.标签的语法
+	5.1.标签不能交叉嵌套
+	
+	5.2.标签必须正确关闭
+	
+	5.3.属性必须有值，属性值必须加引号
+	
+	5.4.注释不能互相嵌套
+	
+6.常用标签
+	6.1.font字体标签
+		<font color="red" face="楷体" size="3">梅亮</font>
+			color 改颜色
+			face  改字体
+			size  改大小(1~7)
+		 
+	6.2.标题标签(h1~h6)
+		h1最大，h6最小
+			<h1 align="middle">你好</h1>
+			align 对齐属性(就三个值)
+		
+	6.3.a标签(超链接)
+		<a href="http://www.baidu.com" target="_self">百度</a>
+			target属性设置哪个目标进行跳转(就两个值)
+				_self	表示当前页面
+				_blank	表示打开新页面
+					
+			href属性设置链接的地址
+			
+	6.4. img标签  #可以在html页面上显示图片
+		<img src="./img/20190430.jpg" width="300" height="300" alt="图片找不到了"/>
+			src属性可以设置图片路径
+				web里的路径: 绝对路径： http://ip:port/工程名/资源路径
+							 相对路径： .        表示当前文件所在的目录
+								        ..       表示当前文件所在的上一级目录
+										文件名   表示当前文件所在目录的文件中，相当于 ./文件名
+										
+			width和height属性设置图片大小
+			
+			border属性设置图片边框大小
+			
+			alt属性设置当指定路径找不到图片时，用来代替显示的文本内容
+			 
+	6.5.iframe标签  #可以在一个html页面上打开一个小窗口，加载一个单独的页面
+		<iframe src="20190430.jpg" width="100" height="100" ></iframe>
+			src属性可以设置路径
+				
+7.列表标签
+	7.1. ul(无序列表)
+		<ul type="circle">
+			<li>梅亮</li>
+			<li>ml</li>
+		</ul>
+		
+		ul是无序列表
+			type属性可以修改列表前面的符号
+			
+	7.2. ol(有序列表)
+		<ol>
+			<li>梅亮</li>
+			<li>ml</li>
+		</ol>
+		
+		ol是有序列表
+		
+8.表格标签
+	<table border="1" width="300" height="300">
+		<tr>
+			<td align="center">1.1</td>
+			<td><b>1.2</b></td>
+		</tr>
+		<tr>
+			<td>2.1</td>
+			<td>2.2</td>
+		</tr>
+	</table>
+	
+	
+		table 表格标签
+			border 设置表格标签
+			width  设置表格宽度
+			height  设置表格高度
+			align 设置表格文本对齐方式
+			cellspacing	设置单元格间距
+		
+		tr  行标签
+		th	表头标签
+		td	单元格标签
+			align 设置单元格文本对齐方式
+		b   加粗标签
+	
+	
+	跨行跨列表格
+			colspan 设置跨列
+			rowspan 设置跨行
+			
+9.表单标签
+	form	#表单标签
+	<form action="http://www.baidu.com" method="get"> 
+		input type = text      #文本输入框
+		input type = password  #密码输入框
+		input type = radio     #单选框
+		input type=checkbox    #多选框
+		input type = reset     # 重置
+		input type = submit    #提交
+	</form>
+			action属性设置提交的服务器地址
+			method属性设置提交的方式GET(默认值)或POST
+	##表单提交的时候，数据没有发送给服务器的三种情况
+		1.表单项没有name属性值
+		2.单选、复选(下拉列表中的option标签)都需要添加value属性，以便发送给服务器
+		3.表单项不在提交的form标签中
+			
+	##GET请求的特点是：
+			1.浏览器的地址栏中的地址是：action属性[+?+请求参数]
+			2.不安全
+			3.有数据长度的限制
+			
+	##POSt请求的特点是：
+			1.浏览器的地址栏中只有action属性值
+			2.相对于GET请求更安全
+			3.理论上没有长度限制
+		
+	用户名:<input type="text" value="默认值" />
+		input type = text  #文本输入框
+				value属性设置默认显示内容
+				
+		input type = password #密码输入框
+				value属性设置默认显示内容
+				
+	性别：<input type="radio" name="sex" checked="checked" />男<input type="radio" name="sex" />女	
+		input type = radio #单选框
+				name属性可以对其分组
+				checked="checked" 表示默认选中
+				
+				
+	兴趣爱好：<input type="checkbox" />Java<input type="checkbox" />C++
+		input type="checkbox"  #多选框
+		
+		
+	国籍：<select>
+				<option>请选择国籍</option>
+				<option selected="selected">中国</option>
+				<option>美国</option>
+			</select>
+		select标签是下拉列表框
+			option是下拉列表框中的选项
+			selected="selected"是设置为默认选项
+			
+	自我评价：<textarea rows="10" cols="20"></textarea>
+		textarea标签表示多行文本输入框
+				rows属性设置可以显示几行的高度
+				cols属性设置每行可以显示几个字符宽度
+					#起始标签和结束标签中的内容是默认值
+					
+					
+		<input type="reset"  value="重置哦" />
+			type = reset 重置
+			type = submit 提交
+					value属性设置默认显示内容
+			
+10.其他标签
+	div标签，默认独占一行
+	span标签，它的长度是封装数据的长度
+	p段落标签，默认会在段落的上方或者下方各空出一行来
